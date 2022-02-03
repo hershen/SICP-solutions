@@ -23,4 +23,15 @@
         (sqrt-iter 1.0 x))
 
 ;1.1.7
+(define (good-enough? guess new-guess)
+        (define difference (abs (- guess new-guess)))
+        (define fraction (/ difference guess))
+        (< fraction 0.001))
+
+(define (sqrt-iter guess x)
+        (define new-guess (improve guess x))
+        (if (good-enough? guess new-guess)
+            new-guess
+            (sqrt-iter new-guess x)))
+
 (define (cube x) (* x x x))
