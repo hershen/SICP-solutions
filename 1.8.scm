@@ -15,7 +15,7 @@
   newGuess)
 
 (define (good-enough? guess x)
-        (< (abs (- (cube guess) x)) 0.1))
+        (= (improveCube guess x) guess))
 
 (define (cube-root x)
         (cube-root-iter 1.0 x))
