@@ -1,3 +1,9 @@
+
+(define (displayConcat toDisplay)
+        (define aList (if (list? toDisplay) toDisplay (list toDisplay)))
+        (define aListWithEOL (append aList '("\n")))
+        (map display aListWithEOL))
+
 ;1.1.6
 (define (sqrt-iter guess x)
         (if (good-enough? guess x)
