@@ -22,3 +22,6 @@
 
 (define (sqrt x)
         (sqrt-iter 1.0 x))
+
+;1.1.7
+(define (cube x) (* x x x))
