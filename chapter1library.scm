@@ -23,15 +23,8 @@
         (sqrt-iter 1.0 x))
 
 ;1.1.7
-(define (good-enough? guess new-guess)
-        (define difference (abs (- guess new-guess)))
-        (define fraction (/ difference guess))
-        (< fraction 0.001))
-
-(define (sqrt-iter guess x)
-        (define new-guess (improve guess x))
-        (if (good-enough? guess new-guess)
-            new-guess
-            (sqrt-iter new-guess x)))
+(define (good-enough? guess x)
+; Continue until guess doesn't change because we reached the machine's precision.
+        (= (improve guess x) guess))
 
 (define (cube x) (* x x x))
